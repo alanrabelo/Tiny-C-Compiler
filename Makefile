@@ -3,8 +3,8 @@ BISON=bison
 CC=gcc
 
 PROGRAMA = sintatico
-LEXICO = lexico.l
-SINTATICO = sintatico.y
+LEXICO = lexico.l.c
+SINTATICO = sintatico.y.c
 
 $(PROGRAMA): $(LEXICO) $(SINTATICO)
 	$(BISON) -d $(SINTATICO)

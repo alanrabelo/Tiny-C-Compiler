@@ -62,7 +62,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 1 "sintatico.y" /* yacc.c:339  */
+#line 1 "sintatico.y.c" /* yacc.c:339  */
 
 
 #include <stdio.h>
@@ -84,7 +84,7 @@ char str9[tamanho];
 
 
 
-#line 88 "sintatico.tab.c" /* yacc.c:339  */
+#line 88 "sintatico.y.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -103,9 +103,9 @@ char str9[tamanho];
 #endif
 
 /* In a future release of Bison, this section will be replaced
-   by #include "sintatico.tab.h".  */
-#ifndef YY_YY_SINTATICO_TAB_H_INCLUDED
-# define YY_YY_SINTATICO_TAB_H_INCLUDED
+   by #include "sintatico.y.tab.c".  */
+#ifndef YY_YY_SINTATICO_Y_TAB_C_INCLUDED
+# define YY_YY_SINTATICO_Y_TAB_C_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -196,11 +196,11 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-#endif /* !YY_YY_SINTATICO_TAB_H_INCLUDED  */
+#endif /* !YY_YY_SINTATICO_Y_TAB_C_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 
-#line 204 "sintatico.tab.c" /* yacc.c:358  */
+#line 204 "sintatico.y.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1552,13 +1552,13 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 91 "sintatico.y" /* yacc.c:1666  */
+#line 91 "sintatico.y.c" /* yacc.c:1666  */
     { printf("SUCCESSFUL COMPILATION."); return 1;}
-#line 1558 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1558 "sintatico.y.tab.c" /* yacc.c:1666  */
     break;
 
 
-#line 1562 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1562 "sintatico.y.tab.c" /* yacc.c:1666  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1786,7 +1786,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 392 "sintatico.y" /* yacc.c:1910  */
+#line 392 "sintatico.y.c" /* yacc.c:1910  */
 
 
 yyerror(char *s)
