@@ -26,7 +26,6 @@ char *string;
 void copia_token_erro();
 char vets[tamanho];
 char vets2[tamanho];
-
 %}
 
 %%
@@ -34,6 +33,7 @@ char vets2[tamanho];
 "void"     {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(VOID);}
 "int"      {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(INT);}
 "char"     {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(CHAR);}
+"float"    {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(FLOAT);}
 "return"   {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(RETURN);}
 "break"    {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(BREAK);}
 "switch"   {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(SWITCH);}
@@ -89,24 +89,25 @@ char vets2[tamanho];
 "exit"     {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(EXIT);}
 
 
-0[1-7][0-7]*        {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(NUM_OCTAL);}
-[0-9]+         {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(NUM_INTEGER);}
-0[Xx][0-9a-fA-F]+   {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(NUM_HEXA);}
+0[1-7][0-7]*                    {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(NUM_OCTAL);}
+[+-]?([0-9]*[.])?[0-9]+         {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(NUM_DECIMAL);}
+[+-]?[0-9]+                     {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(NUM_INTEGER);}
+0[Xx][0-9a-fA-F]+               {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(NUM_HEXA);}
 
-'[\\]?(.)'	        {strcat(vets, yytext);copia_token_erro(); string = malloc(strlen(yytext)*sizeof(char));strcpy(string, yytext); i = 0;
-                        while(string[i] != '\0'){string[i] = string[i+1]; i++;} string[i-2] = '\0';
-			chars+=strlen(yytext);token++;return(CHARACTER);}
+'[\\]?(.)'	                    {strcat(vets, yytext);copia_token_erro(); string = malloc(strlen(yytext)*sizeof(char));strcpy(string, yytext); i = 0;
+                                 while(string[i] != '\0'){string[i] = string[i+1]; i++;} string[i-2] = '\0';
+			                    chars+=strlen(yytext);token++;return(CHARACTER);}
 
-\"([^\\\"]|\\.)*\"	{strcat(vets, yytext);copia_token_erro(); string = malloc(strlen(yytext)*sizeof(char)); strcpy(string, yytext); i = 0;
-			while(string[i] != '\0'){string[i] = string[i+1];i++;} string[i-2] = '\0';
-			chars+=strlen(yytext);token++;return(STRING);}
+\"([^\\\"]|\\.)*\"	            {strcat(vets, yytext);copia_token_erro(); string = malloc(strlen(yytext)*sizeof(char)); strcpy(string, yytext); i = 0;
+			                    while(string[i] != '\0'){string[i] = string[i+1];i++;} string[i-2] = '\0';
+			                    chars+=strlen(yytext);token++;return(STRING);}
 
-[_a-zA-Z][_a-zA-Z0-9]*	{strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(IDENTIFIER);}
+[_a-zA-Z][_a-zA-Z0-9]*	        {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(IDENTIFIER);}
 
-" "		{ strcat(vets, yytext);copia_token_erro();chars+= strlen(yytext); }
-"\t"        { strcat(vets, yytext);copia_token_erro();chars+= strlen(yytext); }   
-"//"(.)*"\n"	{ strcat(vets, yytext);copia_token_erro();lines++; chars=1; yylineno++;}
-"\n"		{ if(ajuda_sint == 1 && ajuda_lex == 0){ajuda_lex=1;strcpy(vets2,vets);}strcpy(vets,"");copia_token_erro();lines++; chars=1; yylineno++;}
+" "		                        { strcat(vets, yytext);copia_token_erro();chars+= strlen(yytext); }
+"\t"                            { strcat(vets, yytext);copia_token_erro();chars+= strlen(yytext); }
+"//"(.)*"\n"	                { strcat(vets, yytext);copia_token_erro();lines++; chars=1; yylineno++;}
+"\n"		                    { if(ajuda_sint == 1 && ajuda_lex == 0){ajuda_lex=1;strcpy(vets2,vets);}strcpy(vets,"");copia_token_erro();lines++; chars=1; yylineno++;}
 
 
 <INITIAL>{

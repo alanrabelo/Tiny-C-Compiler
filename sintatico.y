@@ -22,6 +22,7 @@ char str9[tamanho];
 
 /* declare tokens */
 %token VOID
+%token FLOAT
 %token INT
 %token CHAR
 %token RETURN
@@ -79,6 +80,7 @@ char str9[tamanho];
 %token EXIT
 %token NUM_OCTAL
 %token NUM_INTEGER
+%token NUM_DECIMAL
 %token NUM_HEXA
 %token CHARACTER
 %token STRING
@@ -95,9 +97,7 @@ programa: declaracoes prog1
 	| funcao prog1
 ;
 
-prog1: programa
-	|
-;
+prog1: programa | ;
 //ok
 
 declaracoes: NUMBER_SIGN DEFINE IDENTIFIER expressao
@@ -165,6 +165,7 @@ par4: L_SQUARE_BRACKET expressao R_SQUARE_BRACKET par4
 
 tipo: INT
 	| CHAR
+	| FLOAT
 	| VOID
 ;
 //ok
@@ -386,6 +387,7 @@ expressao_primaria: IDENTIFIER
 numero: NUM_INTEGER
 	| NUM_HEXA
 	| NUM_OCTAL
+	| NUM_DECIMAL
 ;
 //ok
 
