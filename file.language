@@ -1,6 +1,6 @@
-int main() {
-    int x;
-    x = 'A';
-    x = x * 3.6;
-    return 1 & 'A' ;
-}
+char x, y;
+int w;
+float w;
+w = 3.5;
+x = 'A';
+
