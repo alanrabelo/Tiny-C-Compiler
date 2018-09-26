@@ -55,7 +55,18 @@ extern int yydebug;
     ASSIGN = 265,
     NUM_INTEGER = 266,
     NUM_DECIMAL = 267,
-    CHARACTER = 268
+    CHARACTER = 268,
+    SOMA = 269,
+    SUBTRACAO = 270,
+    MULTIPLICACAO = 271,
+    DIVISAO = 272,
+    ABRE_PARENTESE = 273,
+    FECHA_PARENTESE = 274,
+    MODULO = 275,
+    EXPONENCIACAO = 276,
+    AND = 277,
+    OR = 278,
+    NOT = 279
   };
 #endif
 

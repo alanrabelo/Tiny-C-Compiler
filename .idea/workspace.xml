@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="105588eb-6973-4aac-847e-5ebe3b5b5837" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/file.language" beforeDir="false" afterPath="$PROJECT_DIR$/file.language" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lex.yy.c" beforeDir="false" afterPath="$PROJECT_DIR$/lex.yy.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lexico.l" beforeDir="false" afterPath="$PROJECT_DIR$/lexico.l" afterDir="false" />
@@ -54,15 +54,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Makefile" value="46" />
-          <entry key="l" value="96" />
-          <entry key="language" value="332" />
-          <entry key="md" value="596" />
-          <entry key="y" value="276" />
+          <entry key="l" value="142" />
+          <entry key="language" value="398" />
+          <entry key="md" value="597" />
+          <entry key="y" value="1005" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="1346" />
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="2187" />
         </counts>
       </usages-collector>
     </session>
@@ -72,8 +73,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/file.language">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+            <state relative-caret-position="108">
+              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -81,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sintatico.y">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+            <state relative-caret-position="373">
+              <caret line="112" column="35" selection-start-line="112" selection-start-column="35" selection-end-line="112" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -91,8 +92,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="306">
-                <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <first_editor relative-caret-position="144">
+                <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="34" />
               </first_editor>
               <second_editor>
                 <markdownNavigatorState />
@@ -113,8 +114,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lexico.l">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="41" column="121" selection-start-line="41" selection-start-column="110" selection-end-line="41" selection-end-column="121" />
+            <state relative-caret-position="331">
+              <caret line="48" column="3" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -149,9 +150,13 @@
       <find>tipo</find>
       <find>assign</find>
       <find>NUM_DECIMAL</find>
-      <find>identifier</find>
       <find>expressao_de_atri</find>
       <find>ajuda_sint</find>
+      <find>identifier</find>
+      <find>printf</find>
+      <find>SEMICOLON</find>
+      <find>print</find>
+      <find>ASSIGN</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -160,10 +165,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/basicSintatico.y" />
         <option value="$PROJECT_DIR$/basicLexico.l" />
         <option value="$PROJECT_DIR$/Makefile" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/lexico.l" />
         <option value="$PROJECT_DIR$/sintatico.y" />
         <option value="$PROJECT_DIR$/file.language" />
@@ -177,10 +182,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="10" />
-    <option name="y" value="42" />
-    <option name="width" value="1260" />
-    <option name="height" value="673" />
+    <option name="x" value="-1920" />
+    <option name="y" value="-280" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -229,18 +234,18 @@
       <updated>1537371451555</updated>
       <workItem from="1537371454412" duration="551000" />
       <workItem from="1537372043858" duration="2224000" />
-      <workItem from="1537875236530" duration="4138000" />
+      <workItem from="1537875236530" duration="7800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6913000" />
+    <option name="totallyTimeSpent" value="10575000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <frame x="-1920" y="-280" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18849841" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -293,18 +298,18 @@
         <state relative-caret-position="-1872" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lexico.l">
+    <entry file="file://$PROJECT_DIR$/Complexsintatico.y">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="41" column="121" selection-start-line="41" selection-start-column="110" selection-end-line="41" selection-end-column="121" />
+        <state relative-caret-position="347">
+          <caret line="378" selection-start-line="378" selection-end-line="390" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="306">
-            <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <first_editor relative-caret-position="144">
+            <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="34" />
           </first_editor>
           <second_editor>
             <markdownNavigatorState />
@@ -317,24 +322,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Complexsintatico.y">
+    <entry file="file://$PROJECT_DIR$/lexico.l">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="378" selection-start-line="378" selection-end-line="390" selection-end-column="1" />
+        <state relative-caret-position="331">
+          <caret line="48" column="3" lean-forward="true" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sintatico.y">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+        <state relative-caret-position="373">
+          <caret line="112" column="35" selection-start-line="112" selection-start-column="35" selection-end-line="112" selection-end-column="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/file.language">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        <state relative-caret-position="108">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
         </state>
       </provider>
     </entry>

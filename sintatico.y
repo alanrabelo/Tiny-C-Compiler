@@ -32,6 +32,17 @@ char str9[tamanho];
 %token NUM_INTEGER
 %token NUM_DECIMAL
 %token CHARACTER
+%token SOMA
+%token SUBTRACAO
+%token MULTIPLICACAO
+%token DIVISAO
+%token ABRE_PARENTESE
+%token FECHA_PARENTESE
+%token MODULO
+%token EXPONENCIACAO
+%token AND
+%token OR
+%token NOT
 
 %start S
 
@@ -40,12 +51,12 @@ char str9[tamanho];
 S: programa { printf("SUCCESSFUL COMPILATION."); return 1;}
 ;
 
-
 programa: declaracoes
 ;
 
 declaracoes: declaracoes declaracao_de_variaveis
 | declaracoes atribuicao
+| declaracoes expression_with_semicolon
 |
 ;
 //ok
@@ -55,6 +66,8 @@ declaracao_de_variaveis: declaracao_de_variaveis tipo ddv1
 ;
 
 atribuicao : IDENTIFIER ASSIGN valor SEMICOLON
+| IDENTIFIER ASSIGN expression SEMICOLON
+| IDENTIFIER ASSIGN logical_expression SEMICOLON
 ;
 
 ddv1: IDENTIFIER SEMICOLON
@@ -63,12 +76,55 @@ ddv1: IDENTIFIER SEMICOLON
 ddv1: IDENTIFIER COMMA ddv1
 ;
 
+// GRAMÁTICA PARA EXPRESSÕES
+
+expression_with_semicolon : expression SEMICOLON
+;
+
+expression : T SOMA expression
+| T SUBTRACAO expression
+| T
+;
+
+T : M MULTIPLICACAO T
+| M DIVISAO T
+| M
+;
+
+M : E MODULO M
+| E
+;
+
+E : F EXPONENCIACAO E
+| F
+;
+
+F : ABRE_PARENTESE expression FECHA_PARENTESE
+| valor
+| IDENTIFIER
+;
+
+logical_expression_with_semicolon : logical_expression SEMICOLON
+;
+
+logical_expression : logical_expression AND logical_not
+| logical_expression OR logical_not
+| logical_not
+| ABRE_PARENTESE logical_expression FECHA_PARENTESE
+;
+
+logical_not : NOT any_expression
+| any_expression
+;
+
+any_expression : expression
+| logical_expression
+;
 
 valor: NUM_INTEGER
 	| NUM_DECIMAL
 	| CHARACTER
 ;
-
 
 tipo: INT
 	| CHAR

@@ -37,7 +37,17 @@ char vets2[tamanho];
 ";"        {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(SEMICOLON);}
 ","        {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(COMMA);}
 "="        {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(ASSIGN);}
-
+"+"        {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(SOMA);}
+"-"        {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(SUBTRACAO);}
+"*"        {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(MULTIPLICACAO);}
+"/"        {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(DIVISAO);}
+"("        {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(ABRE_PARENTESE);}
+")"        {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(FECHA_PARENTESE);}
+"**"       {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(EXPONENCIACAO);}
+"%"        {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(MODULO);}
+"!"        {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(NOT);}
+"&&"       {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(AND);}
+"||"       {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(OR);}
 
 [+-]?([0-9]*[.])?[0-9]+         {strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(NUM_DECIMAL);}
 
@@ -58,9 +68,7 @@ void copia_token_erro(){
     strcat(AUX13,yytext);
 
 	for (i = 0; yytext[i] != '\0'; i++){
-
 		if(yytext[i] == '\n'){
-
         	strcpy(AUX12,"");
             strcpy(AUX13,"");
             coluna = 0;

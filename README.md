@@ -7,7 +7,6 @@ Declaração de variáveis: int, char e float
 Atribuições e expressões:
     Expressões: +, -, *, /, % e **
     Operadores Lógicos: ||, && e !
-    Conversões implícitas de tipo
     Uso de parênteses em expressões
     Atribuições simples: identificador = expressão;
 
