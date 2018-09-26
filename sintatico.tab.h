@@ -72,7 +72,19 @@ extern int yydebug;
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
+
+union YYSTYPE
+{
+#line 23 "sintatico.y" /* yacc.c:1919  */
+
+	int i;
+	float f;
+	char *s;
+
+#line 85 "sintatico.tab.h" /* yacc.c:1919  */
+};
+
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif

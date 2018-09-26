@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include "lib.h"
 #define tamanho 100000
 extern int yylex();
 extern char* yytext;
@@ -17,38 +18,45 @@ int tam;
 int LIN = 0;
 char str9[tamanho];
 
-
 %}
 
+%union {
+	int i;
+	float f;
+	char *s;
+}
+
 /* declare tokens */
-%token FLOAT
-%token INT
-%token CHAR
-%token RETURN
-%token IDENTIFIER
-%token SEMICOLON
-%token COMMA
-%token ASSIGN
-%token NUM_INTEGER
-%token NUM_DECIMAL
-%token CHARACTER
-%token SOMA
-%token SUBTRACAO
-%token MULTIPLICACAO
-%token DIVISAO
-%token ABRE_PARENTESE
-%token FECHA_PARENTESE
-%token MODULO
-%token EXPONENCIACAO
-%token AND
-%token OR
-%token NOT
+%token <s> FLOAT
+%token <s> INT
+%token <s> CHAR
+%token <s> RETURN
+%token <s> IDENTIFIER
+%token <s> SEMICOLON
+%token <s> COMMA
+%token <s> ASSIGN
+%token <i> NUM_INTEGER
+%token <f> NUM_DECIMAL
+%token <s> CHARACTER
+%token <s> SOMA
+%token <s> SUBTRACAO
+%token <s> MULTIPLICACAO
+%token <s> DIVISAO
+%token <s> ABRE_PARENTESE
+%token <s> FECHA_PARENTESE
+%token <s> MODULO
+%token <s> EXPONENCIACAO
+%token <s> AND
+%token <s> OR
+%token <s> NOT
+
+%type <f> expression T M E F
 
 %start S
 
 %%
 
-S: programa { printf("SUCCESSFUL COMPILATION."); return 1;}
+S: programa { printf("SUCCESSFUL."); return 1;}
 ;
 
 programa: declaracoes
@@ -65,7 +73,9 @@ declaracao_de_variaveis: declaracao_de_variaveis tipo ddv1
 | tipo ddv1
 ;
 
-atribuicao : IDENTIFIER ASSIGN valor SEMICOLON
+atribuicao : IDENTIFIER ASSIGN NUM_INTEGER SEMICOLON
+| IDENTIFIER ASSIGN NUM_DECIMAL SEMICOLON
+| IDENTIFIER ASSIGN CHARACTER SEMICOLON
 | IDENTIFIER ASSIGN expression SEMICOLON
 | IDENTIFIER ASSIGN logical_expression SEMICOLON
 ;
@@ -78,30 +88,32 @@ ddv1: IDENTIFIER COMMA ddv1
 
 // GRAMÁTICA PARA EXPRESSÕES
 
-expression_with_semicolon : expression SEMICOLON
+expression_with_semicolon : expression_with_semicolon expression SEMICOLON
+|
 ;
 
-expression : T SOMA expression
-| T SUBTRACAO expression
-| T
+expression : T SOMA expression { $$ = $1 + $3; printOp($$);}
+| T SUBTRACAO expression { $$ = $1 - $3; }
+| T { $$ = $1; }
 ;
 
-T : M MULTIPLICACAO T
-| M DIVISAO T
-| M
+T : M MULTIPLICACAO T {$$ = $1 * $3; }
+| M DIVISAO T {$$ = $1 / $3; }
+| M {$$ = $1; }
 ;
 
 M : E MODULO M
-| E
+| E {$$ = $1;}
 ;
 
 E : F EXPONENCIACAO E
-| F
+| F {$$ = $1; }
 ;
 
-F : ABRE_PARENTESE expression FECHA_PARENTESE
-| valor
-| IDENTIFIER
+F : ABRE_PARENTESE expression FECHA_PARENTESE {$$ = $2; }
+| NUM_INTEGER {$$ = $1;}
+| NUM_DECIMAL {$$ = $1;}
+| IDENTIFIER { }
 ;
 
 logical_expression_with_semicolon : logical_expression SEMICOLON
@@ -119,11 +131,6 @@ logical_not : NOT any_expression
 
 any_expression : expression
 | logical_expression
-;
-
-valor: NUM_INTEGER
-	| NUM_DECIMAL
-	| CHARACTER
 ;
 
 tipo: INT

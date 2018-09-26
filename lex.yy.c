@@ -488,8 +488,8 @@ char *yytext;
 #include<string.h>
 #include <sintatico.tab.h>
 #define tamanho 100000
-int yylval;
 int ajuda_sint = 0;
+union yylval;
 int ajuda_lex = 0;
 int chars = 1;//contador de char
 int token = 0;//contador de token
@@ -877,24 +877,24 @@ YY_RULE_SETUP
 case 19:
 YY_RULE_SETUP
 #line 52 "lexico.l"
-{strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(NUM_DECIMAL);}
+{strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;yylval.f = atoi(yytext);return(NUM_DECIMAL);}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
 #line 54 "lexico.l"
-{strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(NUM_INTEGER);}
+{strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;yylval.i = atoi(yytext);return(NUM_INTEGER);}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
 #line 56 "lexico.l"
 {strcat(vets, yytext);copia_token_erro(); string = malloc(strlen(yytext)*sizeof(char));strcpy(string, yytext); i = 0;
                                  while(string[i] != '\0'){string[i] = string[i+1]; i++;} string[i-2] = '\0';
-			                    chars+=strlen(yytext);token++;return(CHARACTER);}
+			                    chars+=strlen(yytext);token++;yylval.s = atoi(yytext);return(CHARACTER);}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
 #line 60 "lexico.l"
-{strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;return(IDENTIFIER);}
+{strcat(vets, yytext);copia_token_erro();chars+=strlen(yytext);token++;yylval.s = atoi(yytext);return(IDENTIFIER);}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
@@ -1917,9 +1917,7 @@ void copia_token_erro(){
     strcat(AUX13,yytext);
 
 	for (i = 0; yytext[i] != '\0'; i++){
-
 		if(yytext[i] == '\n'){
-
         	strcpy(AUX12,"");
             strcpy(AUX13,"");
             coluna = 0;
