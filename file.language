@@ -1,6 +1,7 @@
-char x, y;
+char x, ;
 int w;
 float w;
-w = 'A';
-x = 3 + 3;
-x = (3 + 3 * 9 - 5);
+x = 7;
+x = (3 + 3 * 9 - 5 / 8);
+
+//nivando_bezerra@yahoo.com

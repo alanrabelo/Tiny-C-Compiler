@@ -75,7 +75,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 23 "sintatico.y" /* yacc.c:1919  */
+#line 24 "sintatico.y" /* yacc.c:1919  */
 
 	int i;
 	float f;

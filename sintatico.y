@@ -15,6 +15,7 @@ extern char vets2[tamanho];
 extern int coluna;
 extern int lines;
 int tam;
+data *head;
 int LIN = 0;
 char str9[tamanho];
 
@@ -159,6 +160,8 @@ yyerror(char *s)
 
 int main(int argc, char **argv)
 {
+    head = malloc(sizeof(1000000));
+
 	char str34[tamanho];
 	int indice = 0;
 	yyparse();

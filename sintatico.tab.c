@@ -80,11 +80,12 @@ extern char vets2[tamanho];
 extern int coluna;
 extern int lines;
 int tam;
+data *head;
 int LIN = 0;
 char str9[tamanho];
 
 
-#line 88 "sintatico.tab.c" /* yacc.c:339  */
+#line 89 "sintatico.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -149,13 +150,13 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 23 "sintatico.y" /* yacc.c:355  */
+#line 24 "sintatico.y" /* yacc.c:355  */
 
 	int i;
 	float f;
 	char *s;
 
-#line 159 "sintatico.tab.c" /* yacc.c:355  */
+#line 160 "sintatico.tab.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -172,7 +173,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 176 "sintatico.tab.c" /* yacc.c:358  */
+#line 177 "sintatico.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -471,11 +472,11 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    59,    59,    62,    65,    66,    67,    68,    72,    73,
-      76,    77,    78,    79,    80,    83,    86,    91,    92,    95,
-      96,    97,   100,   101,   102,   105,   106,   109,   110,   113,
-     114,   115,   116,   122,   123,   124,   125,   128,   129,   132,
-     133,   136,   137,   138
+       0,    60,    60,    63,    66,    67,    68,    69,    73,    74,
+      77,    78,    79,    80,    81,    84,    87,    92,    93,    96,
+      97,    98,   101,   102,   103,   106,   107,   110,   111,   114,
+     115,   116,   117,   123,   124,   125,   126,   129,   130,   133,
+     134,   137,   138,   139
 };
 #endif
 
@@ -1290,85 +1291,85 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 59 "sintatico.y" /* yacc.c:1666  */
+#line 60 "sintatico.y" /* yacc.c:1666  */
     { printf("SUCCESSFUL."); return 1;}
-#line 1296 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1297 "sintatico.tab.c" /* yacc.c:1666  */
     break;
 
   case 19:
-#line 95 "sintatico.y" /* yacc.c:1666  */
+#line 96 "sintatico.y" /* yacc.c:1666  */
     { (yyval.f) = (yyvsp[-2].f) + (yyvsp[0].f); printOp((yyval.f));}
-#line 1302 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1303 "sintatico.tab.c" /* yacc.c:1666  */
     break;
 
   case 20:
-#line 96 "sintatico.y" /* yacc.c:1666  */
+#line 97 "sintatico.y" /* yacc.c:1666  */
     { (yyval.f) = (yyvsp[-2].f) - (yyvsp[0].f); }
-#line 1308 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1309 "sintatico.tab.c" /* yacc.c:1666  */
     break;
 
   case 21:
-#line 97 "sintatico.y" /* yacc.c:1666  */
+#line 98 "sintatico.y" /* yacc.c:1666  */
     { (yyval.f) = (yyvsp[0].f); }
-#line 1314 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1315 "sintatico.tab.c" /* yacc.c:1666  */
     break;
 
   case 22:
-#line 100 "sintatico.y" /* yacc.c:1666  */
+#line 101 "sintatico.y" /* yacc.c:1666  */
     {(yyval.f) = (yyvsp[-2].f) * (yyvsp[0].f); }
-#line 1320 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1321 "sintatico.tab.c" /* yacc.c:1666  */
     break;
 
   case 23:
-#line 101 "sintatico.y" /* yacc.c:1666  */
+#line 102 "sintatico.y" /* yacc.c:1666  */
     {(yyval.f) = (yyvsp[-2].f) / (yyvsp[0].f); }
-#line 1326 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1327 "sintatico.tab.c" /* yacc.c:1666  */
     break;
 
   case 24:
-#line 102 "sintatico.y" /* yacc.c:1666  */
+#line 103 "sintatico.y" /* yacc.c:1666  */
     {(yyval.f) = (yyvsp[0].f); }
-#line 1332 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1333 "sintatico.tab.c" /* yacc.c:1666  */
     break;
 
   case 26:
-#line 106 "sintatico.y" /* yacc.c:1666  */
+#line 107 "sintatico.y" /* yacc.c:1666  */
     {(yyval.f) = (yyvsp[0].f);}
-#line 1338 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1339 "sintatico.tab.c" /* yacc.c:1666  */
     break;
 
   case 28:
-#line 110 "sintatico.y" /* yacc.c:1666  */
+#line 111 "sintatico.y" /* yacc.c:1666  */
     {(yyval.f) = (yyvsp[0].f); }
-#line 1344 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1345 "sintatico.tab.c" /* yacc.c:1666  */
     break;
 
   case 29:
-#line 113 "sintatico.y" /* yacc.c:1666  */
+#line 114 "sintatico.y" /* yacc.c:1666  */
     {(yyval.f) = (yyvsp[-1].f); }
-#line 1350 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1351 "sintatico.tab.c" /* yacc.c:1666  */
     break;
 
   case 30:
-#line 114 "sintatico.y" /* yacc.c:1666  */
+#line 115 "sintatico.y" /* yacc.c:1666  */
     {(yyval.f) = (yyvsp[0].i);}
-#line 1356 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1357 "sintatico.tab.c" /* yacc.c:1666  */
     break;
 
   case 31:
-#line 115 "sintatico.y" /* yacc.c:1666  */
+#line 116 "sintatico.y" /* yacc.c:1666  */
     {(yyval.f) = (yyvsp[0].f);}
-#line 1362 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1363 "sintatico.tab.c" /* yacc.c:1666  */
     break;
 
   case 32:
-#line 116 "sintatico.y" /* yacc.c:1666  */
+#line 117 "sintatico.y" /* yacc.c:1666  */
     { }
-#line 1368 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1369 "sintatico.tab.c" /* yacc.c:1666  */
     break;
 
 
-#line 1372 "sintatico.tab.c" /* yacc.c:1666  */
+#line 1373 "sintatico.tab.c" /* yacc.c:1666  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1596,7 +1597,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 142 "sintatico.y" /* yacc.c:1910  */
+#line 143 "sintatico.y" /* yacc.c:1910  */
 
 
 yyerror(char *s)
@@ -1617,6 +1618,8 @@ yyerror(char *s)
 
 int main(int argc, char **argv)
 {
+    head = malloc(sizeof(1000000));
+
 	char str34[tamanho];
 	int indice = 0;
 	yyparse();
